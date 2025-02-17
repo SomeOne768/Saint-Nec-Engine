@@ -14,7 +14,7 @@ namespace sne
 	{
         /* Initialize the library */
         if (!glfwInit())
-            return -1;
+            return EXIT_FAILURE;
 
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, glfwMajorVersion);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, glfwMinorVersion);
@@ -24,13 +24,13 @@ namespace sne
         if (!window)
         {
             glfwTerminate();
-            return -1;
+            return EXIT_FAILURE;
         }
 
         /* Make the window's context current */
         glfwMakeContextCurrent(window);
 
-
+        return EXIT_SUCCESS;
 	}
 
 	GLFWwindow* Window::getWindow()

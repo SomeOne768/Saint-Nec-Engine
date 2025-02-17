@@ -97,14 +97,11 @@ int main(void)
 	std::cout << "DEBUG MODE" << std::endl;
 #endif // DEBUG
 
-
-
-	if (sne::Window::createWindow("Saint-Nec-Engine", 1280, 720) == -1)
+	if (sne::Window::createWindow("Saint-Nec-Engine", 1280, 720) == EXIT_FAILURE)
 	{
 		std::cout << "Error creating window, terminating program" <<std::endl;
 		return -1;
 	}
-
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		std::cout << "Failed to initialize GLAD" << std::endl;
